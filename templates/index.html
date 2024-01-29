@@ -1,34 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="/static/style.css">
-    <title>Todo List</title>
+    <title>Todo App</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Todo List</h1>
-        <form action="/add", method="POST">
-            <input type="text" name="task-name" id="task-name" placeholder="Add Task">
-            <input type="submit" value="Add">
-        </form>
-        <div class="tasks">
-            <table class="tasks">
-                {% for task in tasks %}
-                <tr>
-                    <td>{{ task.id }}</td>
-                    <td>{{ task.task }}</td>
-                    {% if task.done == 1 %}
-                    <td>Done</td>
-                    {% else %}
-                    <td>Not Done</td>
-                    {% endif %}
-                    <td><a href="{{url_for('update', task_id=task.id)}}" class="update">Update</a></td>
-                    <td><a href="{{url_for('delete', task_id=task.id)}}" class="delete">Delete</a></td>
-                </tr>
-                {% endfor %}
-            </table>
-        </div>
-    </div>
+    <h1>Todo App</h1>
+    <p>User: {{name}}</p>
 </body>
 </html>
